@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0A0A0F;
+  --ink-600: #252530;
+  --ink-700: #16161E;
+  --volt: #C8FF00;
+  --azure: #0066FF;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--ink);
+  color: #E8E8ED;
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--volt); color: var(--ink); }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--ink-700); }
+::-webkit-scrollbar-thumb { background: #3A3A48; border-radius: 2px; }
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-volt text-ink font-display font-bold text-sm rounded-none hover:bg-white transition-colors duration-150;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 border border-ink-200/20 text-ink-200 font-body text-sm hover:border-volt/50 hover:text-volt transition-colors duration-150;
+  }
+  .card {
+    @apply bg-ink-700 border border-white/5 hover:border-volt/20 transition-colors duration-200;
+  }
+  .tag {
+    @apply inline-flex items-center px-2 py-0.5 text-xs font-mono bg-ink-600 border border-white/10 text-ink-200;
+  }
+  .input {
+    @apply w-full bg-ink-700 border border-white/10 text-ink-50 px-4 py-2.5 font-body text-sm placeholder:text-ink-400 focus:outline-none focus:border-volt/50 transition-colors;
+  }
+  .section-label {
+    @apply text-xs font-mono tracking-widest text-volt uppercase;
+  }
+}
